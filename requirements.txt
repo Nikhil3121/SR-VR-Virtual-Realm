@@ -1,0 +1,19 @@
+# Python 3.10 / 3.11 / 3.12 only.
+#
+# Required deps -----------------------------------------------------------
+# mediapipe is pinned to a version that still ships the legacy
+# `mediapipe.solutions.hands` API. Versions >= 0.10.21 removed it in
+# favor of the new Tasks API.
+# numpy is pinned to <2.0 because mediapipe 0.10.14 was built against
+# the NumPy 1.x ABI. opencv-python is pinned to a release compatible
+# with NumPy 1.x for the same reason.
+pygame>=2.5.0,<3.0
+opencv-python==4.10.0.84
+mediapipe==0.10.14
+numpy>=1.24.0,<2.0
+
+# Optional deps (game gracefully degrades without them) -------------------
+# pyttsx3 enables the voice announcer ("Boss incoming!", "Wave 5", etc.).
+# Without it, announcer is a no-op — game still runs perfectly.
+# Install with: pip install pyttsx3
+# pyttsx3>=2.90
